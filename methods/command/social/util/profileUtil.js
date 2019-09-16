@@ -6,7 +6,7 @@
   */
 
 const request = require('request');
-const imagegenAuth = require('../../../../../tokens/imagegen.json');
+// const imagegenAuth = require('../../../../../tokens/imagegen.json');
 const rings = require('../../../../json/rings.json');
 const levels = require('../../../../util/levels.js');
 const animalUtil = require('../../battle/util/animalUtil.js');

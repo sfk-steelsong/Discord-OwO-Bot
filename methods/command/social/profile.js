@@ -8,7 +8,7 @@
 const CommandInterface = require('../../commandinterface.js');
 
 const profileUtil = require('./util/profileUtil.js');
-const imagegenAuth = require('../../../../tokens/imagegen.json');
+// const imagegenAuth = require('../../../../tokens/imagegen.json');
 
 module.exports = new CommandInterface({
 

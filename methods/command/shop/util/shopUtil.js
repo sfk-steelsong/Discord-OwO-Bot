@@ -7,7 +7,7 @@
 
 const global = require('../../../../util/global.js');
 const numbers = ["⁰","¹","²","³","⁴","⁵","⁶","⁷","⁸","⁹"];
-const imagegen = require('../../../../../tokens/imagegen.json');
+// const imagegen = require('../../../../../tokens/imagegen.json');
 const nextPageEmoji = '➡';
 const prevPageEmoji = '⬅';
 

@@ -6,7 +6,7 @@
   */
 
 const CommandInterface = require('../../commandinterface.js');
-const imagegenAuth = require('../../../../tokens/imagegen.json');
+// const imagegenAuth = require('../../../../tokens/imagegen.json');
 const levelRewards = require('../../../util/levelRewards.js');
 const levelUtil = require('./util/levelUtil.js');
 const settingEmoji = '⚙';

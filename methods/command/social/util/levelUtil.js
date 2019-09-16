@@ -6,7 +6,7 @@
   */
 
 const request = require('request');
-const imagegenAuth = require('../../../../../tokens/imagegen.json');
+// const imagegenAuth = require('../../../../../tokens/imagegen.json');
 const levels = require('../../../../util/levels.js');
 
 exports.display = async function(p,user,opt){

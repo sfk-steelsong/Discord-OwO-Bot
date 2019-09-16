@@ -6,10 +6,9 @@
   */
 
 const CommandInterface = require('../../commandinterface.js');
-const imagegen = require('../battle/battleImage.js');
 const mysql = require('../../../util/mysql.js');
 
-const captcha = require('../../../../tokens/captcha.js');
+// const captcha = require('../../../../tokens/captcha.js');
 
 module.exports = new CommandInterface({
 
@@ -18,8 +17,8 @@ module.exports = new CommandInterface({
 	admin:true,
 
 	execute: async function(p){
-		let data = await captcha();
-		p.send(data.text,null,{files:[data.buffer]});
+		// let data = await captcha();
+		// p.send(data.text,null,{files:[data.buffer]});
 		
 	}
 })

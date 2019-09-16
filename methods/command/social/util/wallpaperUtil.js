@@ -6,7 +6,7 @@
   */
 
 const offsetID = 200;
-const imagegen = require('../../../../../tokens/imagegen.json');
+// const imagegen = require('../../../../../tokens/imagegen.json');
 const wallpaperEmoji = '🖼';
 
 exports.buy = async function(p,id){

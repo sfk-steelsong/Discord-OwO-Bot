@@ -12,10 +12,9 @@ const global = require('../../../../util/global.js');
 const teamUtil = require('./teamUtil.js');
 const weaponUtil = require('./weaponUtil.js');
 const animalUtil = require('./animalUtil.js');
-const battleImageUtil = require('../battleImage.js');
 const WeaponInterface = require('../WeaponInterface.js');
 var allBuffs = WeaponInterface.allBuffs;
-const imagegenAuth = require('../../../../../tokens/imagegen.json');
+// const imagegenAuth = require('../../../../../tokens/imagegen.json');
 const request = require('request');
 const crateUtil = require('./crateUtil.js');
 const alterBattle = require('../../patreon/alterBattle.js');
@@ -201,81 +200,81 @@ exports.initBattle = async function(p,setting){
 
 /* Generates a display for the current battle (image mode)*/
 var display = exports.display = async function(p,team,logs,{display,title,showLogs,logLink}){
-	if(display=="text")
-		return displayText(p,team,logs,{title,showLogs,logLink});
-	else if(display=="compact")
+	// if(display=="text")
+	// 	return displayText(p,team,logs,{title,showLogs,logLink});
+	// else if(display=="compact")
 		return displayCompact(p,team,logs,{title,showLogs,logLink});
-	let image = await battleImageUtil.generateImage(team);
-	if(!image||image=="")
-		return displayCompact(p,team,logs,{title,showLogs,logLink});
-	let logtext = "";
-	let pTeam = "";
-	for(var i=0;i<team.player.team.length;i++){
-		let player = team.player.team[i];
-		pTeam += "L. "+player.stats.lvl+" ";
-		pTeam += player.animal.value;
-		if(player.weapon){
-			pTeam += " - "+player.weapon.rank.emoji+player.weapon.emoji;
-			let passives = player.weapon.passives;
-			for(var j in passives){
-				pTeam += passives[j].emoji;
-			}
-			//pTeam += " "+player.weapon.avgQuality+"%";
-		}else
-			pTeam += " - *no weapon*";
-		if(logs&&logs.player&&logs.player[i]){
-			logtext += "\n";
-			logtext += logs.player[i];
-		}
-		pTeam += "\n";
-	}
-	let eTeam = "";
-	for(var i=0;i<team.enemy.team.length;i++){
-		let enemy = team.enemy.team[i];
-		eTeam += "L. "+enemy.stats.lvl+" ";
-		eTeam += enemy.animal.value;
-		if(enemy.weapon){
-			eTeam += " - "+enemy.weapon.rank.emoji+enemy.weapon.emoji;
-			let passives = enemy.weapon.passives;
-			for(var j in passives){
-				eTeam+= passives[j].emoji;
-			}
-			//eTeam += " "+enemy.weapon.avgQuality+"%";
-		}else
-			eTeam += " - *no weapon*";
-		if(logs&&logs.enemy&&logs.enemy[i]){
-			logtext += "\n";
-			logtext += logs.enemy[i];
-		}
-		eTeam += "\n";
+	// let image = await battleImageUtil.generateImage(team);
+	// if(!image||image=="")
+	// 	return displayCompact(p,team,logs,{title,showLogs,logLink});
+	// let logtext = "";
+	// let pTeam = "";
+	// for(var i=0;i<team.player.team.length;i++){
+	// 	let player = team.player.team[i];
+	// 	pTeam += "L. "+player.stats.lvl+" ";
+	// 	pTeam += player.animal.value;
+	// 	if(player.weapon){
+	// 		pTeam += " - "+player.weapon.rank.emoji+player.weapon.emoji;
+	// 		let passives = player.weapon.passives;
+	// 		for(var j in passives){
+	// 			pTeam += passives[j].emoji;
+	// 		}
+	// 		//pTeam += " "+player.weapon.avgQuality+"%";
+	// 	}else
+	// 		pTeam += " - *no weapon*";
+	// 	if(logs&&logs.player&&logs.player[i]){
+	// 		logtext += "\n";
+	// 		logtext += logs.player[i];
+	// 	}
+	// 	pTeam += "\n";
+	// }
+	// let eTeam = "";
+	// for(var i=0;i<team.enemy.team.length;i++){
+	// 	let enemy = team.enemy.team[i];
+	// 	eTeam += "L. "+enemy.stats.lvl+" ";
+	// 	eTeam += enemy.animal.value;
+	// 	if(enemy.weapon){
+	// 		eTeam += " - "+enemy.weapon.rank.emoji+enemy.weapon.emoji;
+	// 		let passives = enemy.weapon.passives;
+	// 		for(var j in passives){
+	// 			eTeam+= passives[j].emoji;
+	// 		}
+	// 		//eTeam += " "+enemy.weapon.avgQuality+"%";
+	// 	}else
+	// 		eTeam += " - *no weapon*";
+	// 	if(logs&&logs.enemy&&logs.enemy[i]){
+	// 		logtext += "\n";
+	// 		logtext += logs.enemy[i];
+	// 	}
+	// 	eTeam += "\n";
 
-	}
-	let embed = {
-		"color":p.config.embed_color,
-		"author":{
-			"name":title?title:p.msg.author.username+" goes into battle!",
-			"icon_url":p.msg.author.avatarURL()
-		},
-		"fields":[
-		{
-			"name":team.player.name?team.player.name:"Player team",
-			"value":pTeam,
-			"inline":true
-		},{
-			"name":team.enemy.name?team.enemy.name:"Enemy team",
-			"value":eTeam,
-			"inline":true
-		}
-		],
-		"image":{
-			"url":imagegenAuth.imageGenUrl+"/image/"+image
-		}
-	}
+	// }
+	// let embed = {
+	// 	"color":p.config.embed_color,
+	// 	"author":{
+	// 		"name":title?title:p.msg.author.username+" goes into battle!",
+	// 		"icon_url":p.msg.author.avatarURL()
+	// 	},
+	// 	"fields":[
+	// 	{
+	// 		"name":team.player.name?team.player.name:"Player team",
+	// 		"value":pTeam,
+	// 		"inline":true
+	// 	},{
+	// 		"name":team.enemy.name?team.enemy.name:"Enemy team",
+	// 		"value":eTeam,
+	// 		"inline":true
+	// 	}
+	// 	],
+	// 	"image":{
+	// 		"url":imagegenAuth.imageGenUrl+"/image/"+image
+	// 	}
+	// }
 
-	if(logLink) embed.description = "[Log Link]("+logLink+")";
-	else if(showLogs) embed.description = parseLogs(logs);
+	// if(logLink) embed.description = "[Log Link]("+logLink+")";
+	// else if(showLogs) embed.description = parseLogs(logs);
 
-	return {embed}
+	// return {embed}
 }
 
 /* displays the battle as text */

@@ -6,7 +6,7 @@
   */
 
 //const tracer = require('dd-trace').init()
-const debug = false;
+const debug = true;
 if(!debug) var tracer = require('dd-trace').init()
 const whitelist = ['409959187229966337','420104212895105044','552384921914572802']
 if(debug) var auth = require('../tokens/scuttester-auth.json');

@@ -7,7 +7,7 @@
 
 const CommandInterface = require('../../commandinterface.js');
 
-const imagegen = require('../../../../tokens/imagegen.json');
+// const imagegen = require('../../../../tokens/imagegen.json');
 const offsetID = 200;
 const nextPageEmoji = '➡';
 const prevPageEmoji = '⬅';

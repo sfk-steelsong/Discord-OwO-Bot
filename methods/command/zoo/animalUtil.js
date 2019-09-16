@@ -14,11 +14,14 @@ exports.randAnimal = function(patreon,gem,lucky){
 	var result = [];
 
 	/* Calculate percentage */
-	var patreonPercent = animals.cpatreon[0]+animals.patreon[0];
+	// var patreonPercent = animals.cpatreon[0]+animals.patreon[0];
+	var patreonPercent = 0;
 	if(!patreon) patreonPercent = 0;
-	var specialPercent = animals.special[0];
-	if(animals.special[0]=="0") specialPercent = 0;
-	var gemPercent = animals.gem[0];
+	// var specialPercent = animals.special[0];
+	// if(animals.special[0]=="0") specialPercent = 0;
+	var specialPercent = 0;
+	
+	var gemPercent = 0;
 	if(!gem) gemPercent = 0;
 	else if(lucky) gemPercent += gemPercent*lucky.amount;
 
