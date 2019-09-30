@@ -141,10 +141,11 @@ process.on('uncaughtException', err => {
 });
 
 client.on('rateLimit',function(info){
-	//console.log(info);
-	logger.increment("rateLimit");
+	logger.increment("rateLimit",['limit:'+info.limit,'timeout:'+info.timeout,'route:'+info.route]);
 });
 
 client.on('debug',(msg) => {
-	//console.log(msg);
+	//console.log("["+client.shard.ids[0]+"] "+msg);
+	//if(msg.toLowerCase().indexOf('429') === 0){
+	//}
 });
