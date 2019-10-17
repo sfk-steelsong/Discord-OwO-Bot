@@ -23,6 +23,7 @@
     "node-opus": "0.3.2",
     "opusscript": "0.0.6",
     "owoify": "^1.0.2",
+    "node-vibrant": "^3.1.4",
     "patreon": "^0.4.1",
     "redis": "^2.8.0",
     "request": "^2.88.0",
